@@ -24,7 +24,7 @@ app.options('*', cors());
 // ✅ Enable CORS for All Requests
 app.use(
   cors({
-    origin: 'https://job-insider-eight.vercel.app/', // Allow frontend origin
+    origin: 'https://job-insider-eight.vercel.app', // Allow frontend origin
     methods: 'GET, POST, PUT, DELETE, OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true, // Allow cookies if needed
@@ -33,7 +33,7 @@ app.use(
 
 // ✅ Explicitly Handle Preflight Requests (Important for CORS)
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://job-insider-eight.vercel.app/');
+  res.header('Access-Control-Allow-Origin', 'https://job-insider-eight.vercel.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Credentials', 'true');

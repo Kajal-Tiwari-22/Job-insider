@@ -24,12 +24,13 @@ app.options('*', cors());
 // ✅ Enable CORS for All Requests
 app.use(
   cors({
-    origin: 'https://job-insider-eight.vercel.app', // Allow frontend origin
+    origin: ['https://job-insider-eight.vercel.app', 'http://localhost:5173'], // Allow frontend origins
     methods: 'GET, POST, PUT, DELETE, OPTIONS',
     allowedHeaders: 'Content-Type, Authorization',
     credentials: true, // Allow cookies if needed
   })
 );
+
 
 // ✅ Explicitly Handle Preflight Requests (Important for CORS)
 app.use((req, res, next) => {
